@@ -20,7 +20,7 @@ const IterativeTree = ({ categories, onAddNode }: IterativeTreeProps) => {
         <div key={node.id} style={{ marginLeft: "20px" }}>
           <div>
             {node.name}
-            <button onClick={() => onAddNode(node.id)}>Add Child</button>
+            <button onClick={() => onAddNode(node.id)}>Add Node</button>
           </div>
           {node.children && (
             <div>

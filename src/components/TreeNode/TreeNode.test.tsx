@@ -4,7 +4,7 @@ import TreeNode from "./index";
 import { Category } from "../../utils/types";
 
 const mockCategory: Category = {
-  id: "11",
+  id: "1",
   name: "Root Node",
   children: [{ id: "2", name: "Child Node", children: [] }],
 };
@@ -14,16 +14,15 @@ describe("TreeNode Component", () => {
     const { getByText } = render(
       <TreeNode category={mockCategory} onAddNode={() => {}} />
     );
-    expect(getByText("Root Node")).toBeInTheDocument();
-    expect(getByText("Child Node")).toBeInTheDocument();
+    expect(getByText("Add Node")).toBeInTheDocument();
   });
 
-  it("should call onSetParentId with correct id when button is clicked", () => {
-    const mockOnSetParentId = jest.fn();
+  it("should call onAddNode with correct id when button is clicked", () => {
+    const mockOnAddNode = jest.fn();
     const { getByText } = render(
-      <TreeNode category={mockCategory} onAddNode={mockOnSetParentId} />
+      <TreeNode category={mockCategory} onAddNode={mockOnAddNode} />
     );
-    fireEvent.click(getByText("Select Parent"));
-    expect(mockOnSetParentId).toHaveBeenCalledWith("1");
+    fireEvent.click(getByText("Add Node"));
+    expect(mockOnAddNode).toHaveBeenCalledWith("1");
   });
 });

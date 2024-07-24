@@ -6,15 +6,11 @@ interface TreeNodeProps {
 }
 
 const TreeNode = ({ category, onAddNode }: TreeNodeProps) => {
-  console.log("Category", category);
   return (
-    <div
-      //   style={{ marginLeft: "20px" }}
-      className="single-node"
-    >
+    <div className="single-node">
       <div>
         {category.name}
-        <button onClick={() => onAddNode(category.id)}>Add Child</button>
+        <button onClick={() => onAddNode(category.id)}>Add Node</button>
       </div>
       {category.children && (
         <div>
