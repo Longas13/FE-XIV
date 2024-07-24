@@ -1,5 +1,4 @@
 import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 import TreeNode from "./index";
 import { Category } from "../../utils/types";
 
