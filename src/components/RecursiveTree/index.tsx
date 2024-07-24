@@ -1,4 +1,4 @@
-import { Category } from "../../types";
+import { Category } from "../../utils/types";
 import TreeNode from "../TreeNode";
 
 interface RecursiveTreeProps {

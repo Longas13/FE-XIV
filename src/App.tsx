@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RecursiveTree from "./components/RecursiveTree";
 import IterativeTree from "./components/IterativeTree";
-import { Category } from "./types";
+import { Category } from "./utils/types";
 import Container from "react-bootstrap/Container";
 
 const initialData: Category[] = [

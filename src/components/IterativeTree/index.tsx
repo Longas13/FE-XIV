@@ -1,4 +1,4 @@
-import { Category } from "../../types";
+import { Category } from "../../utils/types";
 
 interface IterativeTreeProps {
   categories: Category[];
@@ -14,8 +14,8 @@ const IterativeTree = ({ categories, onAddNode }: IterativeTreeProps) => {
       stack.push({ node: category, children: [] });
     });
 
-    while (stack.length > 0) {
-      const { node, children } = stack.pop()!;
+    if (stack.length > 0) {
+      const { node } = stack.pop()!;
       result.push(
         <div key={node.id} style={{ marginLeft: "20px" }}>
           <div>
