@@ -14,7 +14,7 @@ const IterativeTree = ({ categories, onAddNode }: IterativeTreeProps) => {
       stack.push({ node: category, children: [] });
     });
 
-    if (stack.length > 0) {
+    while (stack.length > 0) {
       const { node } = stack.pop()!;
       result.push(
         <div key={node.id} style={{ marginLeft: "20px" }}>

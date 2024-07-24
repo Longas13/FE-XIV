@@ -42,8 +42,8 @@ const App = () => {
   return (
     <Container>
       <div className="tree-node">
-        {/* <button onClick={() => setMode("recursive")}>Recursive Mode</button> */}
-        {/* <button onClick={() => setMode("iterative")}>Iterative Mode</button> */}
+        <button onClick={() => setMode("recursive")}>Recursive Mode</button>
+        <button onClick={() => setMode("iterative")}>Iterative Mode</button>
         {mode === "recursive" ? (
           <RecursiveTree categories={categories} onAddNode={addNode} />
         ) : (
