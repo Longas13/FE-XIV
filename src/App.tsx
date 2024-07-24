@@ -2,6 +2,7 @@ import { useState } from "react";
 import RecursiveTree from "./components/RecursiveTree";
 import IterativeTree from "./components/IterativeTree";
 import { Category } from "./types";
+import Container from "react-bootstrap/Container";
 
 const initialData: Category[] = [
   { id: "1", name: "Add Tree nodes", children: [] },
@@ -39,15 +40,17 @@ const App = () => {
   };
 
   return (
-    <div className="tree-node">
-      {/* <button onClick={() => setMode("recursive")}>Recursive Mode</button> */}
-      {/* <button onClick={() => setMode("iterative")}>Iterative Mode</button> */}
-      {mode === "recursive" ? (
-        <RecursiveTree categories={categories} onAddNode={addNode} />
-      ) : (
-        <IterativeTree categories={categories} onAddNode={addNode} />
-      )}
-    </div>
+    <Container>
+      <div className="tree-node">
+        {/* <button onClick={() => setMode("recursive")}>Recursive Mode</button> */}
+        {/* <button onClick={() => setMode("iterative")}>Iterative Mode</button> */}
+        {mode === "recursive" ? (
+          <RecursiveTree categories={categories} onAddNode={addNode} />
+        ) : (
+          <IterativeTree categories={categories} onAddNode={addNode} />
+        )}
+      </div>
+    </Container>
   );
 };
 
